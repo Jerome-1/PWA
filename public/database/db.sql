@@ -58,7 +58,7 @@ INSERT INTO preview (book_id, title, chapter) VALUES (10,'Dont Look For Me', 'Fr
 CREATE TABLE reservations (
     book_id INT(2) NOT NULL,
     member_id INT(4) NOT NULL
-    ); /*Need to make sure  that books that are reserved are put in the reservations area*/
+    ); /*Need to make sure  that books that are reserved are put in the reservations area.*/
     
 ALTER TABLE reservations
 ADD FOREIGN KEY (book_id) REFERENCES books(book_id),
