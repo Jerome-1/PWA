@@ -1,9 +1,45 @@
-*{
-    margin: 0;
-    padding: 0;
+header{
+    
+    margin-top: -10px;
+    background-color: black;
+    color: white;
+    width: 110%;
+    height: 10vh;
 }
-.page-status {
-    color: red;
+
+nav {
+    
+    margin-top: -10px;
+
+    position: absolute;
+    width: 100%;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li {
+    list-style: none;
+
+}
+
+li a {
+    text-decoration: none;
+    
+    padding: 80px;
+}
+
+
+nav a{
+    position: relative;
+    left: 85%;
+    top: 35px;
+    color: white;
+    text-decoration: none;
+    margin-right: 70px; /*Shifts items in nav bar to the right*/
 }
 
 #intro {
@@ -11,6 +47,42 @@
     position: relative;
     top: 70px;
 }
+
+.page-status {
+    color: red;
+    position: relative;
+    top: 70px;
+    text-decoration: solid;
+}
+span {
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    margin-top: 95px;
+    
+}
+#heading {
+    position: relative;
+    top: 60px;
+    left: 40px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-bottom:5px solid black ;
+    
+}
+
+#table {
+    position: relative;
+    top: 70px;
+    left: 40px;
+}
+
+
+
+/*
+
+
 #header {
     position: top;
     background-color: black;
@@ -24,18 +96,10 @@
     left: 30px;
     
 }
-span {
-    display: flex ;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
-    margin-top: 95px;
-    
-}
+
 
 br {
-    content: "  "; /*trying to make br between comments smaller*/
+    content: "  "; /*trying to make br between comments smaller
 }
 span {
     position: static;
@@ -53,7 +117,7 @@ span {
     top: 35px;
     color: white;
     text-decoration: none;
-    margin-right: 70px; /*Shifts items in nav bar to the right*/
+    margin-right: 70px; /*Shifts items in nav bar to the right
 }
 #reservations {
     position: relative;
@@ -64,18 +128,11 @@ span {
     
 }
 
-#library {
-    position: relative;
-    top: 60px;
-    left: 40px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    border-bottom:5px solid black ;
-    
-}
+
 
 #account {
     position: relative;
     text-align: center;
     top: 140px;
 }
-
+*/
