@@ -1,7 +1,7 @@
 const CACHE_NAME = 'sw-cache-example';
 const toCache = [
   '/',
-  '/index.html',
+  '/views/index.pug',
   '/js/status.js',
 ];
 

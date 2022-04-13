@@ -1,0 +1,11 @@
+extends layout 
+block content 
+    for item in review
+        h1#heading Review for #{item.title}
+        form(action='/review' method='POST')
+            label(for='title') Review Title: 
+            input('name'='title')
+            label(for='body') Review Body: 
+            textarea('name'='body' rows="4" cols="50")
+            input(type='submit' value='Post')
+    
