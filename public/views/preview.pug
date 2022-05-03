@@ -6,6 +6,8 @@ block content
     for item in chapter 
         p.head Title: <p class = 'Title'> #{item.title} 
         p.chap Chapter 1: <p class = 'Chapter'> #{item.chapter}
-    a.btn(href='#') Reserve Book
+    for item in chapter
+        a.btn(href="/") Reserve Book
     for item in chapter 
         a.btn2(href='/review/' + item.book_id) Write a Review for this book!
+    

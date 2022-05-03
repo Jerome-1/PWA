@@ -1,18 +1,18 @@
 {
-    "name": "Progressive Web App with express",
-    "short_name": "pwa-tutorial",
-    "description": "Attempting to create a PWA that is connected to a node.js server.",
+    "name": "Lea-bridge road Library",
+    "short_name": "Leabridge Library",
+    "description": "The purpose of this application is to enable library members to browse through the libraries book collection, where they will be able to preview and write a review for the book without being present at the library itself.",
     "icons": [
       {
-        "src": "/../images/logo.png",
+        "src": "/../images/please.png",
         "sizes": "512x512",
         "type": "image/png",
-        "purpose": "any maskable"
+        "purpose" : "any maskable"
       }
     ],
     "scope": "/",
     "start_url": "/",
-    "display": "fullscreen",
-    "theme_color": "#ffffff",
-    "background_color": "#764ABC"
+    "display": "standalone",
+    "theme_color": "#764ABC",
+    "background_color": "#ffffff"
   }

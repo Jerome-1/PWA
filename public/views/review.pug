@@ -2,7 +2,7 @@ extends layout
 block content 
     for item in review
         h1#heading Review for #{item.title}
-        form(action='/review' method='POST')
+        form(action='/post' method='POST')
             label(for='title') Review Title: 
             input('name'='title')
             label(for='body') Review Body: 

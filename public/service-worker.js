@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sw-cache-example';
+const CACHE_NAME = 'Library-Cache';
 const toCache = [
   '/',
   '/views/index.pug',

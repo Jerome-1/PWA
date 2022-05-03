@@ -1,3 +1,5 @@
 extends layout 
-block content 
-    h1 #{post}
+block content
+    h1.forms-title=output.title 
+    h1.forms-body=output.body   
+    p #{outputted}

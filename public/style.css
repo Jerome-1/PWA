@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 header{
     
     margin-top: -10px;
@@ -7,12 +12,25 @@ header{
     height: 10vh;
 }
 
+.logo {
+      position: absolute;
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+      left: 1%;
+      top: 3.5%;
+      transition: color .25s;
+      font-weight: bold;
+  }
+.logo:hover {
+    color: blue;
+}
+
 nav {
     
     margin-top: -10px;
-
     position: absolute;
-    width: 100%;
+    width: 90%;
 }
 
 ul {
@@ -28,15 +46,18 @@ ul li {
 
 li a {
     text-decoration: none;
-    
+    transition: color .25s;
     padding: 80px;
 }
 
+li a:hover {
+    color: blue;
+}
 
 nav a{
     position: relative;
     left: 85%;
-    top: 35px;
+    top: 55px;
     color: white;
     text-decoration: none;
     margin-right: 70px; /*Shifts items in nav bar to the right*/
@@ -83,8 +104,12 @@ th, td {
     padding: 15px;
     text-align: center;
     border-bottom: 1px solid #ddd;
+    
 }
-
+td a {
+    text-decoration: none;
+    color: black;
+}
 #trhead {
     background-color: black;
     color: white;
@@ -93,32 +118,37 @@ th, td {
 #tr:hover {
     background-color: rgb(96, 236, 96);
 }
-.Title {
-    position: relative;
-    top: 15%;
+.Title, .Chapter {
+    position: absolute;
+    
 }
-
+.Title {
+    top: 27%;
+    
+}
+.Chapter {
+    top: 38%;
+}
 .head {
-    position: relative;
-    top: 15%;
+    position: absolute;
+    top: 24%;
+    font-weight: bold;
 }
 
 .chap {
-    position: relative;
-    top: 18% ;
+    position: absolute;
+    top: 34% ;
+    font-weight: bold;
 }
-.Chapter {
-    position: relative;
-    top: 18%;
-}
+
 .btn {
-    position: relative;
-    top: 30%;
+    position: absolute;
+    top: 50%;
     left: 10%;
 }
 .btn2 {
-    position: relative;
-    top: 30%;
+    position: absolute;
+    top: 50%;
     left: 20%;
 }
 
@@ -157,3 +187,45 @@ form {
 input {
     margin: 5px 0;
 }
+
+.column {
+    flex: 50%;
+    float: left;
+    width: 33.33%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    margin: 65px;
+}
+.yo{
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50%;
+    position: relative;
+    top: 150px;
+    left: 550px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.image-heading {
+    text-align: center;
+}
+
+.image-paragrapgh {
+    text-align: center;
+}
+

@@ -3,11 +3,13 @@ block content
     h1#heading Library 
     table#table(border=1)
         tr#trhead 
-                th Author 
-                th Book
+                th Book 
+                th Author
+                th Genre
         for item in data  
             tr#tr 
-                td  #{item.book_author}
                 td 
                     a(href='/preview/' + item.book_id) #{item.book_name}
+                td  #{item.book_author}
+                td  #{item.genre}
     

@@ -1,0 +1,13 @@
+extends layout.pug 
+block content
+    h1#heading Test Page 
+    div.row 
+        for item in experiment
+            div.column  
+                a(href="/preview/") 
+                img.yo(src="../images/mercy.jpg", alt="mercy", style="width:100%")
+                h1.image-heading #{item.book_name}
+                p.image-paragrapgh #{item.book_author}
+            
+        
+
