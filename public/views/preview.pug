@@ -1,13 +1,19 @@
-extends layout  
+extends layout 
 block content 
-    head 
-        link(rel="stylesheet", href="style.css")
-    h1#heading  Preview 
-    for item in chapter 
-        p.head Title: <p class = 'Title'> #{item.title} 
-        p.chap Chapter 1: <p class = 'Chapter'> #{item.chapter}
-    for item in chapter
-        a.btn(href="/") Reserve Book
-    for item in chapter 
-        a.btn2(href='/review/' + item.book_id) Write a Review for this book!
-    
+    .preview-page 
+        .preview-template 
+            h1 Title: #{book.title}
+            p  This is a preview of the first chapter from the book '#{book.title}'. If you wish to reserve this book for checkout in the future, hit on the reserve button below. The ID for this book is - #{book.book_id}. 
+            p Chapter one of '#{book.title}'
+            .preview-chapter 
+                p #{book.chapter}
+
+            .review 
+                h2 Create A review about #{book.title}
+                    form(action="/rev", method='POST')
+                        input(type="hidden" name='id' value=book.book_id)
+                        textarea(name="review", cols="50", rows="6")  
+                        div 
+                        input(type="submit" value='Review')
+            .reserve 
+                a.btn(href="/reserved/" + book.book_id) Reserve Book

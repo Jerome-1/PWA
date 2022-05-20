@@ -1,0 +1,11 @@
+extends layout 
+block content 
+    h1 Register here 
+    form(action="/registration" method='POST')
+        label(for="email") Enter your email: 
+        input('name'="email")
+        label(for="username") Enter a username: 
+        input('name'="username")  
+        label(for="email") Enter your password: 
+        input('name'="password") 
+        input(type='submit' value='Submit')

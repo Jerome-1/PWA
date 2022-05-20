@@ -1,7 +1,10 @@
 extends layout.pug  
 block content 
     h1#heading Library 
-    table#table(border=1)
+    .search-wrap 
+        input.search(type="text", id="myInput", onkeyup="myFunction()", placeholder="Search library...")
+        input(type="submit", name="search")
+    table.table(border=1) 
         tr#trhead 
                 th Book 
                 th Author
@@ -9,7 +12,8 @@ block content
         for item in data  
             tr#tr 
                 td 
-                    a(href='/preview/' + item.book_id) #{item.book_name}
+                    a(href='/solo-book/' + item.book_id) #{item.book_name}
                 td  #{item.book_author}
                 td  #{item.genre}
-    
+    .hero 
+    script(src='/js/status.js' async)

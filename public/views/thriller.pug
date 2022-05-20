@@ -1,6 +1,6 @@
-extends layout.pug 
-block content
-    h1#heading Test Page 
+extends layout.pug  
+block content 
+    h1#heading Library 
     .search-wrapper
         nav
             ul 
@@ -16,17 +16,11 @@ block content
                     a(href="/dystopian") Dystopian
             div.search-bar       
                 input.input-bar(type="text", id="input-bar", placeholder="search...", onkeyup="search()")
-                
-            
     div.row  
-        for item in experiment
+        for item in data
             div.column  
                 img.yo(src="../images/cover.jpg", alt="book cover", style="width:100%")
                 h1.image-heading 
                     a.bLink(href="/solo-book/" + item.book_id) #{item.book_name}
                 p.image-paragrapgh #{item.book_author}
                 p.image-paragrapgh #{item.genre}
-    .hero 
-            
-        
-
