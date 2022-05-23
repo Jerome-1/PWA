@@ -46,73 +46,94 @@ app.get("/", function(req, res) {
     if (req.session._id) {
         res.render("index");
     } else {
-        res.redirect('/login')
+        res.render("landing");
     }
     res.end();
 });
 //Account information -NOT IMPORTANT-
 app.get("/account", function(req, res) {
-        res.render("account");    
-    
+        if (req.session._id) {
+            res.render("account");
+        }
+        else {
+            res.render("landing");
+        }
+        res.end();   
 });
 //Setting up Library 
 app.get("/library", function(req, res) {
     var description = 'select `book_name`, `book_author`, `book_id`, `genre` from books'; // SQL query collecting information from `book` database.
     db.query(description).then(results => {
-        res.render("library", {data:results});//Stores sql query into the data variable which is then outputted in the pug template 'library.pug'
+        if (req.session._id) {
+            res.render("library", {data:results});
+        }
+        else {
+            res.render("landing");
+        }
+        res.end();//Stores sql query into the data variable which is then outputted in the pug template 'library.pug'
     });
 });
 
 app.get("/action", function(req, res) {
     var genre1 = 'select `book_name`, `book_author`, `book_id` from books where `genre` = "Action"';
     db.query(genre1).then(results => {
-        res.render("action", {data:results});
+        if (req.session._id) {
+            res.render("action", {data:results});
+        }
+        else {
+            res.render("landing");
+        }
+        res.end();
     });
 });
 app.get("/dystopian", function(req, res) {
     var genre1 = 'select `book_name`, `book_author`, `book_id` from books where `genre` = "Dystopian"';
     db.query(genre1).then(results => {
-        res.render("dystopian", {data:results});
+        if (req.session._id) {
+            res.render("dystopian", {data:results});
+        }
+        else {
+            res.render("landing");
+        }
+        res.end();
     });
 });
 app.get("/mystery", function(req, res) {
     var genre1 = 'select `book_name`, `book_author`, `book_id` from books where `genre` = "Mystery"';
     db.query(genre1).then(results => {
-        res.render("mystery", {data:results});
+        if (req.session._id) {
+            res.render("mystery", {data:results});
+        }
+        else {
+            res.render("landing");
+        }
+        res.end();
     });
 });
 app.get("/romance", function(req, res) {
     var genre1 = 'select `book_name`, `book_author`, `book_id` from books where `genre` = "Romance"';
-    db.query(genre1).then(results => {
-        res.render("romance", {data:results});
+    db.query(genre1).then(results => { 
+        if (req.session._id) {
+            res.render("romance", {data:results});
+        }
+        else {
+            res.render("landing");
+        }
+        res.end();
     });
 });
 app.get("/thriller", function(req, res) {
     var genre1 = 'select `book_name`, `book_author`, `book_id` from books where `genre` = "Thriller"';
     db.query(genre1).then(results => {
-        res.render("thriller", {data:results});
+        if(req.session._id) {
+            res.render("thriller", {data:results});
+        }
+        else {
+            res.render("landing");
+        }
+        res.end();        
     });
 });
-
-app.get("/review/:book_id", function(req, res) {
-    var reviewId = req.params.book_id; //BookId is requesting a parameter which in this case is book_id from the `book` table.
-    var prSql = 'select * from preview where `book_id` = ?';
-    db.query(prSql, [reviewId]).then(results => {
-        console.log(results);
-        res.render("review", {review:results});
-    });  
-});
-
-app.post("/post", function(req, res) {
-    params = req.body;
-    try {
-        console.log(req.body);
-    } catch (err) {
-        console.error('error is ', err.message);
-    };
-    res.render("post", {output: params, outputted:'form submitted'});
-});
-
 
 // !!!!! WORK IN PROGRESS !!!!! 
 
@@ -124,8 +145,14 @@ app.get("/solo-book/:book_id", async function (req, res) {
         Promise => {
             book.getPreviewChapter().then(
                 Promise => {
-                    console.log(book)
-                    res.render("preview", {book:book});
+                    if (req.session._id) {
+                        console.log(book)
+                        res.render("preview", {book:book});
+                    }
+                    else {
+                        res.render("landing");
+                    }
+                    res.end();
                 }
             )
         }
@@ -138,15 +165,27 @@ app.get("/reserved/:book_id", async function(req, res) {
     await book.getBookDetails();
     await book.getBookAuthor();
     await book.getBookGenre();
-    console.log(book)
-    res.render("reserved", {reserved:book}) //gotta figure out how to save this content to the webpage.
+    if (req.session._id) {
+        console.log(book)
+        res.render("reserved", {reserved:book})
+    }
+    else {
+        res.render("landing");
+    }
+    res.end(); //gotta figure out how to save this content to the webpage.
 });
 
 //Testing different ways to display books
 app.get("/test", function(req, res) {
     var test = 'select `book_name`, `book_author`, `book_id`, `genre` from books';
     db.query(test).then(results => {
-        res.render("test", {experiment:results});
+        if (req.session._id) {
+            res.render("test", {experiment:results});
+        }
+        else {
+            res.render("landing");
+        }
+        res.end();
     });   
 });
 
@@ -193,7 +232,7 @@ app.post('/registration', urlencodedParser, function (req, res) {
 })
 
 app.get('/login', function (req, res) {
-    res.render("login");
+    res.render("landing");
 })
 
 app.post('/login', urlencodedParser, function (req, res) {

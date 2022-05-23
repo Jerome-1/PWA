@@ -4,42 +4,142 @@
     font-family: 'poppins', sans-serif;
     box-sizing: border-box;
 }
+/*Login and Registration Forms*/
+.landing {
+    min-height: 30vh;
+}
+.form {
+    border-radius: 5px;
+    padding: 20px;
+    margin: auto;
+    width: 50%;
+}
+.firstHeading {
+    text-align: center;
+}
+.username, .email, .password {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 
+.submit {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/*New ways to do things*/
 .hero {
     min-height: 70vh;
     width: 100%;
     padding: 0 8%;
 }
-nav{
+
+.open {
+    width: 100%;
+    min-height: 50vh;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.bang {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px 0;
+}
+
+.done {
+    flex-basis: 40%;
+    position: relative;
+    margin-left: 50px;
+}
+
+.done::after {
+    content: '';
+    width: 10px;
+    height: 57%;
+    background: #4CAF50;
+    position: absolute;
+    left: -40px;
+    top: 8px;
+}
+ .done2 {
+    position: relative;
+    flex-basis: 60%;
     display: flex;
     align-items: center;
-    font-size: 20px;
-    
-}
-nav ul li {
-    display: inline-block;
-    list-style: none;
-    margin: 10px 40px;
-    justify-content: space-between;
+ }
+
+.done2, .book {
+     width: 70%;
+ }
+.head1 {
+    font-size: 54px;
 }
 
-nav ul li a {
+.head2 {
+    font-size: 30px;
+    color: #707070;
+    font-weight: 100;
+    margin: 20px 0 10px;
+}
+
+.para1 {
+    font-size: 16px;
+    color: #4CAF50;
+    font-weight: 100;
+}
+
+/*Genre Nav menu */
+nav {
+    width: 60vw;
+    min-width: 600px ;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+/*Links in all nav-bars*/
+a.genre {
+    position: relative;
     text-decoration: none;
-    color: #000;
+    color: #a0a0a0;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    padding: 0 10px;
 }
 
-nav ul li a:hover {
-    color: blue;
+a.genre::after {
+    content: "";
+    position:absolute;
+    background-color: #4CAF50;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
 }
+
+a.genre:hover:after {
+    width: 100%;
+}
+/*Ends here*/
+
 body {
     overflow-x: hidden; /*GETS RID OF HORIZONTAL SCROLL BAR*/
-    margin: 0px;
-    padding: 0px;
-    font-size: 16px;
-    text-align: left;
-    line-height: 150%;
-    
 }
+/*New ways to do things end here*/
 /* Navigation Menu */
 .menu {
     background: black;
@@ -56,13 +156,8 @@ body {
     margin: 15px;
     padding: 15px;
 }
-.menu ul li a {
-    text-decoration: none;
-    color: #fff;
-}
-.menu ul li a:hover {
-    color: blue;
-}
+
+
 
 /* <-- END OF NAVIGATION --> */
 
@@ -94,7 +189,10 @@ span {
     position: relative;
     top: 60px;
     left: 40px;
-    border-bottom:5px solid black ;
+    width: 90%;
+    height: 50px;
+    border-bottom:5px solid black;
+    line-height: 50px;
 }
 /* <-- END OF MAIN HEADING --> */
 
@@ -215,9 +313,9 @@ td a {
     outline: none;
     text-decoration: none;
     padding: 2px 1px 0;
-    color: rgb(0, 0, 141);
+    color: #000000;
 }
 
 .bLink:hover {
-    color: red;
+    color: #4CAF50;
 }

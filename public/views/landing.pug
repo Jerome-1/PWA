@@ -1,0 +1,16 @@
+extends layout
+block content
+    .landing
+    h1.firstHeading Login to The Lea-Bridge Road Library App
+        .form
+            form(action='login' method='POST')
+                label(for="username")  
+                input.username('name'="username", placeholder="Enter your username...") 
+                label(for="email") 
+                input.email('name'="email", placeholder="Enter your email...")  
+                label(for="password")  
+                input.password('name'="password", placeholder="Enter your password...") 
+                input.submit(type='submit' value='Submit')
+                a.btn(href="/register") Don't have an account? Sign up Here!
+    
+        
