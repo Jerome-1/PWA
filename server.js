@@ -61,7 +61,7 @@ app.get("/account", function(req, res) {
         res.end();   
 });
 //Setting up Library 
-app.get("/library", function(req, res) {
+app.get("/gone", function(req, res) {
     var description = 'select `book_name`, `book_author`, `book_id`, `genre` from books'; // SQL query collecting information from `book` database.
     db.query(description).then(results => {
         if (req.session._id) {
@@ -74,8 +74,8 @@ app.get("/library", function(req, res) {
     });
 });
 
-app.get("/action", function(req, res) {
-    var genre1 = 'select `book_name`, `book_author`, `book_id` from books where `genre` = "Action"';
+app.get("/adventure", function(req, res) {
+    var genre1 = 'select `book_name`, `book_author`, `book_id`, `genre` from books where `genre` = "Action"';
     db.query(genre1).then(results => {
         if (req.session._id) {
             res.render("action", {data:results});
@@ -87,7 +87,7 @@ app.get("/action", function(req, res) {
     });
 });
 app.get("/dystopian", function(req, res) {
-    var genre1 = 'select `book_name`, `book_author`, `book_id` from books where `genre` = "Dystopian"';
+    var genre1 = 'select `book_name`, `book_author`, `book_id`, `genre` from books where `genre` = "Dystopian"';
     db.query(genre1).then(results => {
         if (req.session._id) {
             res.render("dystopian", {data:results});
@@ -99,7 +99,7 @@ app.get("/dystopian", function(req, res) {
     });
 });
 app.get("/mystery", function(req, res) {
-    var genre1 = 'select `book_name`, `book_author`, `book_id` from books where `genre` = "Mystery"';
+    var genre1 = 'select `book_name`, `book_author`, `book_id`, `genre` from books where `genre` = "Mystery"';
     db.query(genre1).then(results => {
         if (req.session._id) {
             res.render("mystery", {data:results});
@@ -111,7 +111,7 @@ app.get("/mystery", function(req, res) {
     });
 });
 app.get("/romance", function(req, res) {
-    var genre1 = 'select `book_name`, `book_author`, `book_id` from books where `genre` = "Romance"';
+    var genre1 = 'select `book_name`, `book_author`, `book_id`, `genre` from books where `genre` = "Romance"';
     db.query(genre1).then(results => { 
         if (req.session._id) {
             res.render("romance", {data:results});
@@ -123,7 +123,7 @@ app.get("/romance", function(req, res) {
     });
 });
 app.get("/thriller", function(req, res) {
-    var genre1 = 'select `book_name`, `book_author`, `book_id` from books where `genre` = "Thriller"';
+    var genre1 = 'select `book_name`, `book_author`, `book_id`, `genre` from books where `genre` = "Thriller"';
     db.query(genre1).then(results => {
         if(req.session._id) {
             res.render("thriller", {data:results});
@@ -132,6 +132,19 @@ app.get("/thriller", function(req, res) {
             res.render("landing");
         }
         res.end();        
+    });
+});
+
+app.get("/children", function(req, res) {
+    var genre1 = 'select `book_name`, `book_author`, `book_id`, `genre` from books where `genre` = "Children"';
+    db.query(genre1).then(results => {
+        if (req.session._id) {
+            res.render("children", {data:results});
+        }
+        else {
+            res.render("landing");
+        }
+        res.end();
     });
 });
 
@@ -176,7 +189,7 @@ app.get("/reserved/:book_id", async function(req, res) {
 });
 
 //Testing different ways to display books
-app.get("/test", function(req, res) {
+app.get("/library", function(req, res) {
     var test = 'select `book_name`, `book_author`, `book_id`, `genre` from books';
     db.query(test).then(results => {
         if (req.session._id) {
@@ -261,6 +274,14 @@ app.get('/logout', function (req, res) {
     res.redirect('/login');
 })
 
+app.get('/pictures', function (req, res) {
+    var hello = 'select imageBits from images';
+    db.query(hello).then(results => {
+        console.log(results)
+        res.render("pictures", {data:results})
+    })
+
+})
 
 app.listen(httpPort, function () {
     console.log(`Running at http:// ${hostname}:${httpPort}!`);

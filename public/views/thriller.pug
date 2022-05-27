@@ -1,21 +1,7 @@
 extends layout.pug  
 block content 
     h1#heading Library 
-    .search-wrapper
-        nav
-            ul 
-                li 
-                    a(href="/action") Action
-                li 
-                    a(href="/romance") Romance
-                li 
-                    a(href="/mystery") Mystery
-                li 
-                    a(href="/Thriller") Thriller
-                li 
-                    a(href="/dystopian") Dystopian
-            div.search-bar       
-                input.input-bar(type="text", id="input-bar", placeholder="search...", onkeyup="search()")
+    include includes/genre.pug
     div.row  
         for item in data
             div.column  

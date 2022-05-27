@@ -8,15 +8,18 @@
 .landing {
     min-height: 30vh;
 }
+
 .form {
     border-radius: 5px;
     padding: 20px;
     margin: auto;
     width: 50%;
 }
+
 .firstHeading {
     text-align: center;
 }
+
 .username, .email, .password {
   width: 100%;
   padding: 12px 20px;
@@ -39,17 +42,51 @@
 }
 
 /*New ways to do things*/
-.hero {
+.section1 {
+    min-height: 10vh;
+    width: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+
+.section2 {
+    min-height: 80vh;
+    width: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.section3 {
     min-height: 70vh;
     width: 100%;
-    padding: 0 8%;
+    padding-left: 15%;
+    padding-right: 15%;
+    position: relative;
+    top: 90px;
+}
+
+
+
+/* <-- HOME PAGE ASPECTS --> */
+#intro {
+    color: blue;
+    position: relative;
+    top: 70px;
+}
+
+.page-status {
+    color: #4CAF50;
+    text-decoration: solid;
+    font-size: 25px;
+    font-family: Georgia, sans-serif;
 }
 
 .open {
     width: 100%;
     min-height: 50vh;
-    padding-left: 8%;
-    padding-right: 8%;
+    padding-left: 15%;
+    padding-right: 15%;
     box-sizing: border-box;
     overflow: hidden;
 }
@@ -66,25 +103,31 @@
     margin-left: 50px;
 }
 
-.done::after {
+.done::after { /* The header on the side*/
     content: '';
     width: 10px;
     height: 57%;
     background: #4CAF50;
     position: absolute;
     left: -40px;
-    top: 8px;
+    top: 45px;
 }
  .done2 {
     position: relative;
-    flex-basis: 60%;
+    flex-basis: 50%;
     display: flex;
     align-items: center;
  }
 
+.book {
+    position: relative;
+    top: -40px;
+}
+
 .done2, .book {
-     width: 70%;
+     width: 60%;
  }
+
 .head1 {
     font-size: 54px;
 }
@@ -101,7 +144,10 @@
     color: #4CAF50;
     font-weight: 100;
 }
-
+.head1, .head2, .para1 {
+    position: relative;
+    top: 40px;
+}
 /*Genre Nav menu */
 nav {
     width: 60vw;
@@ -146,11 +192,13 @@ body {
     text-align: center;
     
 }
+
 .menu ul {
     display: inline-flex;
     list-style: none;
     color: #fff;
 }
+
 .menu ul li {
     width: 120px;
     margin: 15px;
@@ -160,29 +208,6 @@ body {
 
 
 /* <-- END OF NAVIGATION --> */
-
-/* <-- HOME PAGE ASPECTS --> */
-#intro {
-    color: blue;
-    position: relative;
-    top: 70px;
-}
-
-.page-status {
-    color: red;
-    position: relative;
-    top: 70px;
-    text-decoration: solid;
-}
-span {
-    display: flex ;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
-    margin-top: 95px;
-    
-}
 /* <-- MAIN HEADING --> */
 
 #heading {
@@ -191,8 +216,12 @@ span {
     left: 40px;
     width: 90%;
     height: 50px;
-    border-bottom:5px solid black;
-    line-height: 50px;
+    background-color: #000000;
+    color: #ffffff;
+    border:5px solid black;
+    border-color: #000000;
+    font-family: Georgia, sans-serif;
+    
 }
 /* <-- END OF MAIN HEADING --> */
 
@@ -201,6 +230,7 @@ span {
     position: relative;
     left: 50%;
 }
+
 .search-wrap {
     position: relative;
     top:70px;
@@ -210,6 +240,7 @@ span {
     position: relative;
     top: 60px;
 }
+
 .input-bar{
     border-radius: 5px;
     flex: 1;
@@ -266,17 +297,31 @@ td a {
      
 }
 
-/* <-- FORM STYLES --> */
-
-
-
 /* <-- BOOK LAYOUT --> */
-
-.column {
-    flex: 20%;
+.catRow::after {
+    content: "";
+    clear: both;
+    display: table;
+ }
+ 
+ .catColumn {
     float: left;
     width: 33.33%;
-    vertical-align: middle;
+    padding: 5px;
+    position: relative;
+    top: 90px;
+ }
+.catColumn img {
+    height: auto;
+    width: 100%;
+}
+.catRow {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+.column {
+    float: left;
+    width: 20%;
     margin: 50px;
     position: relative;
     top: 60px;
@@ -289,9 +334,7 @@ td a {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 75%;
-    height: 20%;
- 
+    width: 60%;
 }
 
 .row::after {
@@ -307,6 +350,10 @@ td a {
 
 .image-paragrapgh {
     text-align: center;
+}
+
+.hero {
+    min-height: 50vh;
 }
 /* <-- LINKS FOR BOOK TITLE --> */
 .bLink {

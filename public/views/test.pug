@@ -1,17 +1,7 @@
 extends layout.pug 
 block content
     h1#heading Test Page 
-    .search-wrapper
-        nav 
-            a.genre(href="/action") Action
-            a.genre(href="/romance") Romance
-            a.genre(href="/mystery") Mystery
-            a.genre(href="/thriller") Thriller
-            a.genre(href="/dystopian") Dystopian
-            div.search-bar       
-                input.input-bar(type="text", id="input-bar", placeholder="search...", onkeyup="search()")
-                
-            
+    include includes/genre.pug
     div.row  
         for item in experiment
             div.column  
